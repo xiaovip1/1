@@ -4,7 +4,11 @@
 // description=Rewrite https://a.com/app/* → https://a.com/pc/*
 // type=http-request
 // timeout=10
+[rewrite_local]
+https:\/\/api\.yikao88\.com\/api-shop\/course\/app\/? url script-request-header redirect-app-to-pc.js
 
+[mitm]
+hostname = api.yikao88.com
 // 获取原始请求 URL
 const url = $request.url;
 
